@@ -9,7 +9,7 @@ import NavBar from "./components/NavBar";
 function App() {
   return (
     <BrowserRouter>
-   
+    <NavBar />
       <Routes>
         <Route element={<Home />} path='/' exact />
         <Route element={<About />} path='/about' />
