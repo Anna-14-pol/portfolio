@@ -14,6 +14,14 @@ export default {
       {
         name: "place",
         type: "string",
+        options: {
+          list: [
+            { value: "full sun", title: "Full Sun" },
+            { value: "partial sun", title: "Partial Sun" },
+            { value: "partial shadow", title: "Partial Shadow" },
+            { value: "full shadow", title: "Full Shadow" },
+          ],
+        },
       },
       {
         name: 'mainImage',
@@ -28,14 +36,14 @@ export default {
         type: "text",
       },
       {
-        name: "projectType",
-        title: "Project type",
+        name: "watering",
+        title: "Watering",
         type: "string",
         options: {
           list: [
-            { value: "personal", title: "Personal" },
-            { value: "client", title: "Client" },
-            { value: "school", title: "School" },
+            { value: "low", title: "Low" },
+            { value: "average", title: "Average" },
+            { value: "high", title: "High" },
           ],
         },
       },

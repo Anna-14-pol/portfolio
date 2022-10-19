@@ -12,7 +12,7 @@ export default function Project() {
           date,
           place,
           description,
-          projectType,
+          watering,
           link,
           mainImage{
             asset->{
@@ -30,11 +30,13 @@ export default function Project() {
   return (
     <main className="bg-green-100 min-h-screen p-12">
       <section className="container mx-auto">
-        <h1 className="text-5xl flex justify-center cursive">My Projects</h1>
+        <h1 className="text-5xl flex justify-center cursive">
+          Plants in my Garden
+        </h1>
         <h2 className="text-lg text-gray-600 flex justify-center mb-12">
-          Welcome to my projects page!
+          Welcome to my fav plant selection!
         </h2>
-        <section className="grid grid-cols-2 gap-8">
+        <section className="grid md:grid-cols-2 gap-8">
           {projectData &&
             projectData.map((project, index) => (
               <article className="relative rounded-lg shadow-xl bg-white p-16">
@@ -49,39 +51,44 @@ export default function Project() {
                   </a>
                 </h3>
                 <div className="text-gray-500 text-xs space-x-4">
-                  <span>
-                    <strong className="font-bold">Finished on</strong>:{" "}
-                    {new Date(project.date).toLocaleDateString()}
-                  </span>
-                  <span>
-                    <strong className="font-bold">Company</strong>:{" "}
-                    {project.place}
-                  </span>
-                  <span>
-                    <strong className="font-bold">Type</strong>:{" "}
-                    {project.projectType}
-                  </span>
-                  <p className="my-6 text-lg text-gray-700 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <a
-                    href={project.link}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="text-red-500 font-bold hover:underline hover:text-red-400 text-xl"
-                  >
-                    View The Project{" "}
-                      <span
-                    className="block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-green-400"
-                  >
-                    <img
-                      src={project.mainImage.asset.url}
-                      alt={project.mainImage.alt}
-                      className="w-full h-full rounded-r object-cover absolute"
-                    />
-                    </span>
-                    </a>
-                  
+                  <ul>
+                    <li>
+                      <strong className="font-bold">In my garden from</strong>:{" "}
+                      {new Date(project.date).toLocaleDateString()}
+                    </li>
+
+                    <li>
+                      <strong className="font-bold">Place</strong>:{" "}
+                      {project.place}
+                    </li>
+
+                    <li>
+                      <strong className="font-bold">Watering</strong>:{" "}
+                      {project.watering}
+                    </li>
+                    <li>
+                      <p className="my-6 text-lg text-gray-700 leading-relaxed">
+                        {project.description}
+                      </p>
+                    </li>
+                    <li>
+                      <a
+                        href={project.link}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        className="text-green-500 font-bold hover:underline hover:text-red-200 text-xl"
+                      >
+                        More about this plant
+                        <span className="block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-green-400">
+                          <img
+                            src={project.mainImage.asset.url}
+                            alt={project.mainImage.alt}
+                            className="w-full h-full rounded-r object-cover absolute"
+                          />
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </article>
             ))}

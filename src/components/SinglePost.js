@@ -48,7 +48,9 @@ export default function SinglePost() {
               </h1>
               <div className="flex justify-center text-gray-800">
                 <img
-                  src={urlFor(singlePost.authorImage).url()}
+                  src={urlFor(singlePost.authorImage)
+                    .saturation(-100)
+                    .url()}
                   alt={singlePost.name}
                   className="w-10 h-10 rounded-full"
                 />
@@ -68,7 +70,7 @@ export default function SinglePost() {
         <div className="px-16 lg:px-48 py-12 lg:py-20 prose lg:prose-xl max-w-full">
           <BlockContent
             blocks={singlePost.body}
-            projectId="r99w5jgb"
+            projectId="od2l7vep"
             dataset="production"
           />
         </div>

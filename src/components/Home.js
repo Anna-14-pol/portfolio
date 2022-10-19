@@ -7,10 +7,10 @@ export default function Home() {
       <img
         src={image}
         alt="Garden"
-        className="absolute object-cover w-full h-full"
+        className="absolute object-cover w-full h-full bg-green-800"
       />
-        <section className="relative flex justify-center min-h-screen pt-12 lg:pt-64 px-8">
-        <h1 className="text-6xl text-green-600 font-bold cursive leading-none lg:leading-snug home-name">
+      <section className="relative flex justify-center min-h-screen pt-12 lg:pt-64 md:pl-32">
+        <h1 className="text-6xl text-green-600 font-bold cursive leading-snug home-name">
           Hey, Gardeners!
         </h1>
       </section>
