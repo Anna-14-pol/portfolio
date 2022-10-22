@@ -4,6 +4,22 @@ import sanityClient from "../client.js";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 
+const serializers = {
+  marks: {
+    link: ({ mark, children }) => {
+      // Read https://css-tricks.com/use-target_blank/
+      const { blank, href } = mark;
+      return blank ? (
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          {children}
+        </a>
+      ) : (
+        <a href={href}>{children}</a>
+      );
+    },
+  },
+};
+
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);
@@ -70,6 +86,7 @@ export default function SinglePost() {
         <div className="px-16 lg:px-48 py-12 lg:py-20 prose lg:prose-xl max-w-full">
           <BlockContent
             blocks={singlePost.body}
+            serializers={serializers}
             projectId="od2l7vep"
             dataset="production"
           />

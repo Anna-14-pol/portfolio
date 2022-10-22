@@ -53,18 +53,22 @@ export default function Project() {
                 <div className="text-gray-500 text-xs space-x-4">
                   <ul>
                     <li>
-                      <strong className="font-bold">In my garden from</strong>:{" "}
+                      <strong className="font-bold">in my garden from</strong>:{" "}
                       {new Date(project.date).toLocaleDateString()}
                     </li>
 
                     <li>
-                      <strong className="font-bold">Place</strong>:{" "}
+                      <strong className="font-bold">place</strong>:{" "}
                       {project.place}
                     </li>
 
                     <li>
-                      <strong className="font-bold">Watering</strong>:{" "}
+                      <strong className="font-bold">watering</strong>:{" "}
                       {project.watering}
+                    </li>
+                    <li>
+                      <strong className="font-bold">tags</strong>:{" "}
+                      {project.tags.toString()}
                     </li>
                     <li>
                       <p className="my-6 text-lg text-gray-700 leading-relaxed">
