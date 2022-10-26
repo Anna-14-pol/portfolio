@@ -29,8 +29,8 @@ export default function About() {
   return (
     <main className="relative">
       <img src={converse} alt="Converse" className="absolute w-0 md:w-full " />
-      <div className="p-10 lg:pt-48 container mx-auto relative">
-        <section className="bg-green-200 rounded-lg shadow-2xl lg:flex p-20">
+      <div className="p-10 lg:pt-24 container mx-auto relative">
+        <section className="bg-green-100 rounded-lg shadow-2xl lg:flex p-10 lg:p-20">
           <img
             src={urlFor(author.authorImage).url()}
             className="rounded w-32 h-32 lg:w-64 lg:h-64 mr-8"

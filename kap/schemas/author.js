@@ -38,11 +38,6 @@ export default {
         },
       ],
     },
-    {
-      name: "body",
-      title: "Body",
-      type: "blockContent",
-    },
   ],
   preview: {
     select: {

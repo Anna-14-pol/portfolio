@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./Project.css";
+
 export default function Project() {
   const [projectData, setProjectData] = useState(null);
 
@@ -27,6 +32,26 @@ export default function Project() {
       .catch(console.error);
   }, []);
 
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
+  };
+
   return (
     <main className="bg-green-100 min-h-screen p-12">
       <section className="container mx-auto">
@@ -36,66 +61,73 @@ export default function Project() {
         <h2 className="text-lg text-gray-600 flex justify-center mb-12">
           Welcome to my fav plant selection!
         </h2>
-        <section className="grid md:grid-cols-2 gap-8">
-          {projectData &&
-            projectData.map((project, index) => (
-              <article className="relative rounded-lg shadow-xl bg-white p-16">
-                <h3 className="text-gray-800 text-3xl font-bold mb-2 hover:text-red-700">
-                  <a
-                    href={project.link}
-                    alt={project.title}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {project.title}
-                  </a>
-                </h3>
-                <div className="text-gray-500 text-xs space-x-4">
-                  <ul>
-                    <li>
-                      <strong className="font-bold">in my garden from</strong>:{" "}
-                      {new Date(project.date).toLocaleDateString()}
-                    </li>
+        <section className="Project">
+          <Slider {...settings}>
+            {projectData &&
+              projectData.map((project, index) => (
+                <article className="relative rounded-lg shadow-xl bg-white p-16">
+                  <h3 className="text-gray-800 text-3xl font-bold mb-2 hover:text-red-700">
+                    <a
+                      href={project.link}
+                      alt={project.title}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {project.title}
+                    </a>
+                  </h3>
+                  <div className="text-gray-600 text-xs space-x-4">
+                    <ul>
+                      <li>
+                        <strong className="font-bold">in my garden from</strong>
+                        : {new Date(project.date).toLocaleDateString()}
+                      </li>
 
-                    <li>
-                      <strong className="font-bold">place</strong>:{" "}
-                      {project.place}
-                    </li>
+                      <li>
+                        <strong className="font-bold">place</strong>:{" "}
+                        {project.place}
+                      </li>
 
-                    <li>
-                      <strong className="font-bold">watering</strong>:{" "}
-                      {project.watering}
-                    </li>
-                    <li>
-                      <strong className="font-bold">tags</strong>:{" "}
-                      {project.tags.toString()}
-                    </li>
-                    <li>
-                      <p className="my-6 text-lg text-gray-700 leading-relaxed">
-                        {project.description}
-                      </p>
-                    </li>
-                    <li>
-                      <a
-                        href={project.link}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        className="text-green-500 font-bold hover:underline hover:text-red-200 text-xl"
-                      >
-                        More about this plant
-                        <span className="block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-green-400">
-                          <img
-                            src={project.mainImage.asset.url}
-                            alt={project.mainImage.alt}
-                            className="w-full h-full rounded-r object-cover absolute"
-                          />
-                        </span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </article>
-            ))}
+                      <li>
+                        <strong className="font-bold">watering</strong>:{" "}
+                        {project.watering}
+                      </li>
+                      <li>
+                        <strong className="font-bold">tags</strong>:{" "}
+                        {project.tags.toString()}
+                      </li>
+                      <li>
+                        <details>
+                          <summary className="text-green-300 font-bold cursive hover:underline hover:text-red-200 text-xl">
+                            description
+                          </summary>
+                          <p className="my-6 text-base text-gray-700 leading-relaxed">
+                            {project.description}
+                          </p>
+                        </details>
+                      </li>
+                      <li>
+                        <a
+                          href={project.link}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          className="text-green-500 font-bold hover:text-red-200 text-base"
+                        >
+                          Click the photo for more!
+                          <span className="block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-green-400">
+                            <img
+                              src={project.mainImage.asset.url}
+                              alt={project.mainImage.alt}
+                              className="w-full h-full rounded-r object-cover absolute"
+                            />
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              ))}
+          </Slider>
         </section>
       </section>
     </main>
