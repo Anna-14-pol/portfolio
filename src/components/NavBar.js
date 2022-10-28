@@ -37,7 +37,7 @@ export default function NavBar() {
             About Me!
           </NavLink>
         </nav>
-        <div className="inline-flex items-center py-3 bg-green-800">
+        <div className="inline-flex items-center py-24 md:py-6 px-3 bg-green-800 flex-col md:flex-row">
           <SocialIcon
             url="https://github.com/Anna-14-pol"
             className="mr-4"

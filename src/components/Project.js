@@ -53,7 +53,7 @@ export default function Project() {
   };
 
   return (
-    <main className="bg-green-100 min-h-screen p-12">
+    <main className="bg-green-100 min-h-screen p-6">
       <section className="container mx-auto">
         <h1 className="text-5xl flex justify-center cursive">
           Plants in my Garden
@@ -65,7 +65,7 @@ export default function Project() {
           <Slider {...settings}>
             {projectData &&
               projectData.map((project, index) => (
-                <article className="relative rounded-lg shadow-xl bg-white p-16">
+                <article className="relative rounded-lg shadow-xl bg-white p-8">
                   <h3 className="text-gray-800 text-3xl font-bold mb-2 hover:text-red-700">
                     <a
                       href={project.link}
