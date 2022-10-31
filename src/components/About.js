@@ -29,8 +29,8 @@ export default function About() {
   return (
     <main className="relative">
       <img src={converse} alt="Converse" className="absolute w-0 md:w-full " />
-      <div className="p-10 lg:pt-24 container mx-auto relative">
-        <section className="bg-green-100 rounded-lg shadow-2xl lg:flex p-10 lg:p-20">
+      <div className="p-5 lg:pt-24 container mx-auto relative">
+        <section className="bg-green-200 rounded-lg shadow-2xl lg:flex p-10 lg:p-20">
           <img
             src={urlFor(author.authorImage).url()}
             className="rounded w-32 h-32 lg:w-64 lg:h-64 mr-8"
@@ -39,9 +39,9 @@ export default function About() {
           <div className="text-lg flex flex-col justify-center">
             <h1 className="cursive text-6xl text-green-300 mb-4">
               Hey there. I'm{" "}
-              <span className="text-green-800">{author.name}</span>
+              <span className="text-green-900">{author.name}</span>
             </h1>
-            <p className="text-green-600 text-lg">{author.bio}</p>
+            <p className="text-green-800 text-lg">{author.bio}</p>
           </div>
         </section>
       </div>

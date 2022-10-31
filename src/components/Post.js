@@ -26,7 +26,7 @@ export default function Post() {
   }, []);
 
   return (
-    <main className="bg-green-100 min-h-screen p-12">
+    <main className="bg-gradient-to-r from-green-600 to-slate-800 min-h-screen p-6">
       <section className="container mx-auto">
         <h1 className="text-5xl flex justify-center cursive">
           Types of Gardens
@@ -40,7 +40,7 @@ export default function Post() {
               <article>
                 <Link to={"/post/" + post.slug.current} key={post.slug.current}>
                   <span
-                    className="block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-green-400"
+                    className="block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-green-200"
                     key={index}
                   >
                     <img

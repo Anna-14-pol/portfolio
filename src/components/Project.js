@@ -53,7 +53,7 @@ export default function Project() {
   };
 
   return (
-    <main className="bg-green-100 min-h-screen p-6">
+    <main className="bg-gradient-to-r from-green-600 to-slate-800 min-h-screen p-6">
       <section className="container mx-auto">
         <h1 className="text-5xl flex justify-center cursive">
           Plants in my Garden
