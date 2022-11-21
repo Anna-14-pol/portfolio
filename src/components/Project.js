@@ -94,7 +94,7 @@ export default function Project() {
                       </li>
                       <li>
                         <strong className="font-bold">tags</strong>:{" "}
-                        {project.tags.toString()}
+                        {project.tags.join(", ")}
                       </li>
                       <li>
                         <details>
