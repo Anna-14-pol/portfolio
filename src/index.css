@@ -20,15 +20,26 @@
   font-size: 120px;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 640px) {
   .home-name {
     font-size: 75px;
-    margin-top: 70px;
+    margin-top: 95px;
     margin-left: -75px;
   }
   .home-home {
     font-size: 75px;
     margin-top: 75vh;
     margin-left: -145px;
+  }
+}
+@media only screen and (min-width: 1380px) {
+  .home-name {
+    font-size: 175px;
+    margin-top: 60vh;
+    margin-left: -75px;
+  }
+  .home-home {
+    font-size: 175px;
+    margin-top: 60vh;
   }
 }
