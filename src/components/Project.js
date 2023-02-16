@@ -66,7 +66,7 @@ export default function Project() {
             {projectData &&
               projectData.map((project, index) => (
                 <article className="relative rounded-lg shadow-xl bg-white p-8">
-                  <h3 className="text-gray-800 text-3xl font-bold mb-2 hover:text-red-700">
+                  <h3 className="text-gray-800 text-3xl font-bold mb-2 hover:text-green-700">
                     <a
                       href={project.link}
                       alt={project.title}
@@ -98,10 +98,10 @@ export default function Project() {
                       </li>
                       <li>
                         <details>
-                          <summary className="text-green-300 font-bold cursive hover:underline hover:text-red-200 text-xl">
+                          <summary className="text-green-300 font-bold cursive hover:underline hover:text-blue-800 text-xl">
                             description
                           </summary>
-                          <p className="my-6 text-base text-gray-700 leading-relaxed">
+                          <p className="my-6 text-base text-blue-800 leading-relaxed">
                             {project.description}
                           </p>
                         </details>
@@ -111,7 +111,7 @@ export default function Project() {
                           href={project.link}
                           rel="noopener noreferrer"
                           target="_blank"
-                          className="text-green-500 font-bold hover:text-red-200 text-base"
+                          className="text-green-500 font-bold hover:text-purple-700 text-base"
                         >
                           Click the photo for more!
                           <span className="block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-green-400">
