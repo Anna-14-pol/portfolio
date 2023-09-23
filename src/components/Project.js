@@ -59,7 +59,8 @@ export default function Project() {
           Plants in my Garden
         </h1>
         <h2 className="text-lg text-gray-600 flex justify-center mb-12">
-          Welcome to my fav plant selection!
+          Click on the photo below to see an example garden project/design
+          containing this plant.
         </h2>
         <section className="Project">
           <Slider {...settings}>
