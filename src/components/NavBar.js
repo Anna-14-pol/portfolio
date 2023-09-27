@@ -13,25 +13,25 @@ export default function NavBar() {
             activeClassName="text-white"
             className="inflex-flex items-center py-6 px-3 mr-4 text-purple-200 hover:text-black text-4xl font-bold cursive tracking-widest"
           >
-            Muszka And The Garden
+            Muszka In The Garden
           </NavLink>
           <NavLink
             to="/post"
-            className="inline-flex items-center py-3 px-3 my-6 rounded text-purple-800 font-bold hover:text-purple-200 "
+            className="inline-flex items-center py-3 px-3 my-6 rounded text-purple-200 font-bold hover:text-purple-800 "
             activeClassName="text-red-100 bg-red-700"
           >
             Garden Styles
           </NavLink>
           <NavLink
             to="/project"
-            className="inline-flex items-center py-3 px-3 my-6 rounded text-purple-800 font-bold hover:text-purple-200 "
+            className="inline-flex items-center py-3 px-3 my-6 rounded text-purple-200 font-bold hover:text-purple-800 "
             activeClassName="text-red-100 bg-red-700"
           >
             My Plants
           </NavLink>
           <NavLink
             to="/about"
-            className="inline-flex items-center py-3 px-3 my-6 rounded text-purple-800 font-bold hover:text-purple-200"
+            className="inline-flex items-center py-3 px-3 my-6 rounded text-purple-200 font-bold hover:text-purple-800"
             activeClassName="text-red-100 bg-red-700"
           >
             About Me!
